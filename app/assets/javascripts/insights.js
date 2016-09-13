@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).on('turbolinks:load', function() {
 
   $('#new_insight').on('ajax:success', function(e, data) {
     var li = document.createElement('li');
