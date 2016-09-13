@@ -6,19 +6,25 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="main-wrapper">
   <header>
+    <%= link_to image_tag('logo.png'), root_path %>
     <% if current_user %>
-      <%= link_to "Sign Out", signout_path, method: :delete %>
+      <%= link_to "Sign Out", signout_path, class: "pull-right", method: :delete %>
     <% else %>
-      <%= link_to "Sign In", signin_path %>
-      <%= link_to "Sign Up", signup_path %>
+      <%= link_to "Sign Up", signup_path, class: "pull-right" %>
+      <%= link_to "Sign In", signin_path, class: "pull-right" %>
     <% end %>
   </header>
+
   <% if flash[:notice] %>
-    <%= flash[:notice] %>
+    <div class="flash-notice">
+      <%= flash[:notice] %>
+    </div>
   <% elsif flash[:success] %>
-    <%= flash[:success] %>
+    <div class="flash-success">
+      <%= flash[:success] %>
+    </div>
   <% end %>
 <%= yield %>
 

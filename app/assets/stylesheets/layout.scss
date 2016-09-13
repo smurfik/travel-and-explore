@@ -1,0 +1,4 @@
+.main-wrapper {
+  @include outer-container;
+  background-color: $base-background-color;
+}
