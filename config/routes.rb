@@ -1,6 +1,16 @@
 Rails.application.routes.draw do
-  resources :users, only: %i{create new}
+  get :signup, to: 'users#new', as: :signup
+  resources :users, only: :create
+
   resources :destinations, only: :index
+
+  get :signin, to: 'sessions#new', as: :signin
+  delete :signout, to: 'sessions#destroy', as: :signout
+  resources :sessions, only: :create
+
+  resources :dashboards, only: :index
+
+  root 'dashboards#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
