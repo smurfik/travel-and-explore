@@ -1,5 +1,7 @@
-<%= form_tag sessions_path do |f| %>
-  <%= text_field_tag :email, nil, placeholder: 'email' %>
-  <%= password_field_tag :password, nil, placeholder: 'password' %>
-  <%= submit_tag %>
-<% end %>
+<div class="form-wrapper">
+  <%= form_tag sessions_path do |f| %>
+    <%= text_field_tag :email, nil, placeholder: 'email' %>
+    <%= password_field_tag :password, nil, placeholder: 'password' %>
+    <%= submit_tag %>
+  <% end %>
+</div>

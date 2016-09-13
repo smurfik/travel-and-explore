@@ -2,3 +2,34 @@
   @include outer-container;
   background-color: $base-background-color;
 }
+
+.destination-info {
+  @include span-columns(3);
+  @include omega;
+  padding: 20px;
+  margin: 10px;
+
+  img {
+    width: 100%;
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  .small {
+    font-size: $base-font-size - .2;
+  }
+
+  .center:last-child {
+    font-weight: 900;
+  }
+}
+
+.form-wrapper {
+  @include span-columns(6);
+  @include shift(3);
+  text-align: center;
+}
+
+* { outline:  1px solid blue}

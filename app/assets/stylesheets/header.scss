@@ -1,9 +1,15 @@
 .header-wrapper {
-  background-color: $base-background-color;
   height: $header-height;
+
+  img {
+    margin: 20px;
+  }
 }
 
 .pull-right {
   float: right;
   padding: 16px;
+  margin-top: 20px;
+  margin-right: 10px;
+  background-color: $light-gray;
 }

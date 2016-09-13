@@ -1,13 +1,19 @@
 <h1>Destinations index page</h1>
 
-<%= form_tag destinations_path, method: "GET" do %>
-  <%= text_field_tag :query, params[:query], placeholder: "city or country" %>
-  <%= submit_tag "Search" %>
-<% end %>
+<div class="form-wrapper">
+  <%= form_tag destinations_path, method: "GET" do %>
+    <%= text_field_tag :query, params[:query], placeholder: "city or country" %>
+    <%= submit_tag "Search" %>
+  <% end %>
+</div>
 
 <% destinations.each do |destination| %>
-  <%= link_to image_tag(destination.image_url), destination_path(destination) %>
-  <%= destination.city %>
-  <%= destination.country %>
-  <%= link_to "Edit Destination", edit_destination_path(destination) %>
+  <div class="destination-info">
+    <%= link_to image_tag(destination.image_url), destination_path(destination) %>
+    <div class="center small"><%= destination.country %></div>
+    <div class="center"><%= destination.city %></div>
+    <% if current_user == destination.user %>
+      <%= link_to "Edit Destination", edit_destination_path(destination) %>
+    <% end %>
+  </div>
 <% end %>
