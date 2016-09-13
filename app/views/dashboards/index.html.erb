@@ -3,7 +3,7 @@
   <ul>
     <% destinations.each do |destination| %>
       <li><%= link_to destination.display_name, destination_path(destination) %>
-        <%= link_to "Edit", edit_destination_path(destination) %>
+        <%= link_to "Edit", edit_destination_path(destination), class: "edit" %>
       </li>
     <% end %>
   </ul>
@@ -11,13 +11,18 @@
   <h1>You don't have any destinations yet.</h1>
 <% end %>
 
+<hr>
 <%= link_to "Add Destination", new_destination_path %>
+<hr>
 
 <% if current_user.insights.any? %>
   <h1>Below are the insights that you've added</h1>
   <ul>
     <% current_user.insights.each do |insight| %>
-      <li><%= insight.body %></li>
+      <li>
+        <%= insight.body %>
+        <%= link_to insight.destination.display_name, destination_path(insight.destination) %>
+      </li>
     <% end %>
   </ul>
 <% else %>

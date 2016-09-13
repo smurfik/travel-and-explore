@@ -1,4 +1,4 @@
-user = User.create(
+user = User.create!(
   username: "sunny",
   email: "sunny@day.com",
   password: "go",
@@ -68,3 +68,12 @@ Destination.create(
   image_url: "https://s3-us-west-2.amazonaws.com/weasel-dev/washington-monument-1627184_1280.jpg",
   user_id: user.id
 )
+
+10.times do
+  puts user
+  Insight.create!(
+    user_id: user.id,
+    destination_id: Destination.all.sample.id,
+    body: ["This is an awesome place to visit!", "This is a real pearl!", "Fantastic Restaurants", "People are lovely", "I want to move here!"].sample
+  )
+end
