@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get :signup, to: 'users#new', as: :signup
   resources :users, only: :create
 
-  resources :destinations, only: :index
+  resources :destinations, except: :destroy
 
   get :signin, to: 'sessions#new', as: :signin
   delete :signout, to: 'sessions#destroy', as: :signout

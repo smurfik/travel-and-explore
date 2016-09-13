@@ -3,4 +3,6 @@ class User < ActiveRecord::Base
 
   validates :username, :email, presence: true, uniqueness: true
   validates :email, format: { with: /\w@\w/ }
+
+  has_many :destinations
 end
