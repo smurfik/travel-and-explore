@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   resources :dashboards, only: :index
 
+  resources :insights, only: :create
+
   root 'dashboards#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

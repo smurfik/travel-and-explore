@@ -1,6 +1,6 @@
 class DestinationsController < ApplicationController
-  helper_method :destination, :destinations
-  attr_reader :destination, :destinations
+  helper_method :destination, :destinations, :insights
+  attr_reader :destination, :destinations, :insights
 
   before_action :auth_user, only: %i{new create edit update}
 
@@ -21,6 +21,7 @@ class DestinationsController < ApplicationController
 
   def show
     @destination = Destination.find(params[:id])
+    @insights = destination.insights.includes(:user).reverse
   end
 
   def create

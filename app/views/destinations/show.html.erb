@@ -9,3 +9,18 @@
 <% end %>
 
 <h2>Talk about your experience. Places to visit? What are some of the hidden gems you've discovered from the locals?</h2>
+<div id="insight-error"></div>
+<%= form_for Insight.new, remote: true do |f| %>
+  <%= f.text_field :body %>
+  <%= f.hidden_field :destination_id, value: destination.id %>
+  <%= f.submit %>
+<% end %>
+
+<ul class="insights">
+<% insights.each do |insight| %>
+  <li>
+    <%= insight.user.username %>
+    <%= insight.body %>
+  </li>
+<% end %>
+</ul>
