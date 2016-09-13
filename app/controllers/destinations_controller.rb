@@ -1,10 +1,18 @@
 class DestinationsController < ApplicationController
-  helper_method :destination
-  attr_reader :destination
+  helper_method :destination, :destinations
+  attr_reader :destination, :destinations
 
   before_action :auth_user, only: %i{new create edit update}
 
   def index
+    if params[:query].present?
+      @destinations = Destination.where("city ILIKE :query or country ILIKE :query", { query: "%#{params[:query]}%" })
+      if destinations.empty?
+        flash.now[:notice] = "Destination was not found. Maybe you want to create it?"
+      end
+    else
+      @destinations = Destination.take(10)
+    end
   end
 
   def new
