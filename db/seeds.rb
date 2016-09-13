@@ -1,7 +1,46 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+user = User.create(
+  username: "sunny",
+  email: "sunny@day.com",
+  password: "go",
+  password_confirmation: "go"
+)
+
+Destination.create(
+  city: "Rome",
+  country: "Italy",
+  currency: "euro",
+  language: "italian",
+  image_url: "https://s3-us-west-2.amazonaws.com/weasel-dev/italy-1411360_1280.jpg",
+  user_id: user.id
+)
+Destination.create(
+  city: "London",
+  country: "England",
+  currency: "pound",
+  language: "english",
+  image_url: "https://s3-us-west-2.amazonaws.com/weasel-dev/london-140785_1280.jpg",
+  user_id: user.id
+)
+Destination.create(
+  city: "New York",
+  country: "United States",
+  currency: "dollar", language: "english",
+  image_url: "https://s3-us-west-2.amazonaws.com/weasel-dev/new-york-668616_1280.jpg",
+  user_id: user.id
+)
+Destination.create(
+  city: "Berlin",
+  country: "Germany",
+  currency: "euro",
+  language: "german",
+  image_url: "https://s3-us-west-2.amazonaws.com/weasel-dev/berlin-979715_1280.jpg",
+  user_id: user.id
+)
+Destination.create(
+  city: "San Francisco",
+  country: "United States",
+  currency: "dollar",
+  language: "english",
+  image_url: "https://s3-us-west-2.amazonaws.com/weasel-dev/golden-gate-bridge-388917_1280.jpg",
+  user_id: user.id
+)
