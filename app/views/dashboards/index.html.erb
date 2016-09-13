@@ -1,0 +1,13 @@
+<% if destinations.any? %>
+  <h1>Below are the destinations that you've created</h1>
+  <% destinations.each do |destination| %>
+    <%= link_to image_tag(destination.image_url), destination_path(destination) %>
+    <%= destination.city %>
+    <%= destination.country %>
+    <%= link_to "Edit Destination", edit_destination_path(destination) %>
+  <% end %>
+<% else %>
+  <h1>You don't have any destinations yet.</h1>
+<% end %>
+
+<%= link_to "Add Destination", new_destination_path %>

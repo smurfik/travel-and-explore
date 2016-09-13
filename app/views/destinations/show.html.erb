@@ -1,0 +1,11 @@
+<h1>Visit <%= destination.display_name %>!</h1>
+
+<%= image_tag destination.image_url %>
+<%= destination.currency %>
+<%= destination.language %>
+
+<% if current_user == destination.user %>
+  <%= link_to "Edit Destination", edit_destination_path(destination) %>
+<% end %>
+
+<h2>Talk about your experience. Places to visit? What are some of the hidden gems you've discovered from the locals?</h2>
