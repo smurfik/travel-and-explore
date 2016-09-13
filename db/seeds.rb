@@ -44,3 +44,27 @@ Destination.create(
   image_url: "https://s3-us-west-2.amazonaws.com/weasel-dev/golden-gate-bridge-388917_1280.jpg",
   user_id: user.id
 )
+Destination.create(
+  city: "Paris",
+  country: "France",
+  currency: "euro",
+  language: "french",
+  image_url: "https://s3-us-west-2.amazonaws.com/weasel-dev/eiffel-tower-1209943_1280.jpg",
+  user_id: user.id
+)
+Destination.create(
+  city: "Seattle",
+  country: "United States",
+  currency: "dollar",
+  language: "english",
+  image_url: "https://s3-us-west-2.amazonaws.com/weasel-dev/seattle-870282_1280.jpg",
+  user_id: user.id
+)
+Destination.create(
+  city: "Washington DC",
+  country: "United States",
+  currency: "dollar",
+  language: "english",
+  image_url: "https://s3-us-west-2.amazonaws.com/weasel-dev/washington-monument-1627184_1280.jpg",
+  user_id: user.id
+)

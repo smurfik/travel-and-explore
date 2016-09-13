@@ -2,7 +2,7 @@
   <h1>Below are the destinations that you've created</h1>
   <ul>
     <% destinations.each do |destination| %>
-      <li><%= destination.display_name %>
+      <li><%= link_to destination.display_name, destination_path(destination) %>
         <%= link_to "Edit", edit_destination_path(destination) %>
       </li>
     <% end %>
