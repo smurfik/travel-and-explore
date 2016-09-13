@@ -6,6 +6,6 @@ class Destination < ActiveRecord::Base
   validates :city, uniqueness: { scope: :country }
 
   def display_name
-    "#{city.capitalize}, #{country.capitalize}"
+    "#{city.titleize}, #{country.titleize}"
   end
 end

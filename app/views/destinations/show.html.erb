@@ -1,8 +1,9 @@
-<h1>Visit <%= destination.display_name %>!</h1>
+<h1 data-display-name="<%= destination.display_name %>" id="display-name">Visit <%= destination.display_name %>!</h1>
 
 <%= image_tag destination.image_url %>
 <%= destination.currency %>
 <%= destination.language %>
+<div id="weather"></div>
 
 <% if current_user == destination.user %>
   <%= link_to "Edit Destination", edit_destination_path(destination) %>
