@@ -5,4 +5,5 @@ class User < ActiveRecord::Base
   validates :email, format: { with: /\w@\w/ }
 
   has_many :destinations
+  has_many :insights
 end
