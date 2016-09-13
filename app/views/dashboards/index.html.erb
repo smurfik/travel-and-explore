@@ -12,3 +12,14 @@
 <% end %>
 
 <%= link_to "Add Destination", new_destination_path %>
+
+<% if current_user.insights.any? %>
+  <h1>Below are the insights that you've added</h1>
+  <ul>
+    <% current_user.insights.each do |insight| %>
+      <li><%= insight.body %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <h1>You don't have any insights yet.</h1>
+<% end %>
