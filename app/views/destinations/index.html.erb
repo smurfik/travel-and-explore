@@ -7,6 +7,7 @@
   <% end %>
 </div>
 
+<hr>
 <% destinations.each do |destination| %>
   <div class="destination-info">
     <%= link_to image_tag(destination.image_url), destination_path(destination) %>
