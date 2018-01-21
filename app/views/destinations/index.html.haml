@@ -1,0 +1,15 @@
+%h1 Travel and Explore
+
+.form-wrapper
+  = form_tag destinations_path, method: "GET" do
+    = text_field_tag :query, params[:query], placeholder: "city or country"
+    = submit_tag "Search"
+
+%hr
+- destinations.each do |destination|
+  .destination-info
+    = link_to image_tag(destination.image_url), destination_path(destination)
+    .center.small= destination.country
+    .center= destination.city
+    - if current_user == destination.user
+      = link_to "Edit Destination", edit_destination_path(destination)
