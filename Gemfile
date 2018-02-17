@@ -10,9 +10,10 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
-gem 'bourbon'
-gem 'neat'
-gem 'bitters'
+gem 'bourbon', '~> 4.2'
+gem 'neat', '~> 1.8.0'
+gem 'bitters', '~> 1.2.0'
+gem 'haml', '~> 5.0.4'
 
 
 group :development, :test do

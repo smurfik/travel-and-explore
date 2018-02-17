@@ -1,0 +1,32 @@
+%h1#display-name{"data-display-name" => destination.display_name}= "Visit #{destination.display_name}!"
+
+.top-show
+  = image_tag destination.image_url, class: "show-page"
+  .show-page
+    = "Currency: #{destination.currency.capitalize}"
+    %br
+    = "Language: #{destination.language.capitalize}"
+    %br
+    = "Current weather:"
+    #weather
+
+%hr
+- if current_user == destination.user
+  = link_to "Edit Destination", edit_destination_path(destination)
+  %hr
+
+%h2 Talk about your experience. Places to visit? What are some of the hidden gems you've discovered from the locals?
+
+#insight-error
+
+.form-wrapper
+  = form_for Insight.new, remote: true do |f|
+    = f.text_field :body
+    = f.hidden_field :destination_id, value: destination.id
+    = f.submit
+
+%ul.insights
+  - insights.each do |insight|
+    %li
+      = insight.user.username
+      = insight.body

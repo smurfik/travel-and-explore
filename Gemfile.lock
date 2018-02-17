@@ -63,6 +63,9 @@ GEM
     execjs (2.7.0)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
+    haml (5.0.4)
+      temple (>= 0.8.0)
+      tilt
     i18n (0.7.0)
     jbuilder (2.6.0)
       activesupport (>= 3.0.0, < 5.1)
@@ -155,6 +158,7 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    temple (0.8.0)
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.5)
@@ -176,13 +180,14 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt (~> 3.1.7)
-  bitters
-  bourbon
+  bitters (~> 1.2.0)
+  bourbon (~> 4.2)
   byebug
   coffee-rails (~> 4.1.0)
+  haml (~> 5.0.4)
   jbuilder (~> 2.0)
   jquery-rails
-  neat
+  neat (~> 1.8.0)
   pg (~> 0.15)
   rails (= 4.2.7.1)
   rspec-rails
@@ -194,4 +199,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.12.5
+   1.15.4
