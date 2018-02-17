@@ -15,7 +15,6 @@ gem 'neat', '~> 1.8.0'
 gem 'bitters', '~> 1.2.0'
 gem 'haml', '~> 5.0.4'
 
-
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
